@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300,400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>crediCuota$</title>
+</head>
+<body>
+    <header class="header">
+        <div class="barra contenedor">
+            <div class="barra__logo">
+                <img src="img/img logo.jpg" alt="">
+            </div>
+
+            <nav class="barra__navegacion">
+                <a class="barra__link" href="#simulador">Simular Prestamo</a>
+                <a class="barra__link" href="#footer">Tasas e intereses</a>
+                <a class="barra__link" href="registrate.html">Registrate</a>
+            </nav>
+        </div>
+    </header>
+
+        <main class="main contenedor">
+            <div class="main__formulario">
+                <div class="main__titulo">
+                    <h1>Pedi tu prestamo es muy facil y rapido</h1>
+                    <h2 id="simulador">Simula tu prestamo en simples pasos.</h2>
+                </div>
+                <form class="formulario__submit" id="form">
+                    <div class="main__simulador">
+                        <label class="formulario__label" for="">Nombre</label>
+                        <input type="text" class="formulario__input" id="" placeholder="Introduce tu nombre" value="">
+
+                        <label class="formulario__label" for="">Apellido</label>
+                        <input type="text" class="formulario__input" id="" placeholder="Introduce tu apellido" value="">
+
+                        <label class="formulario__label" for="">dni</label>
+                        <input type="number" class="formulario__input" id="" placeholder="Indicar dni" value="">
+                        
+                        <label class="formulario__label" for="">Correo electronico</label>
+                        <input type="email" class="formulario__input" id="" placeholder="Indica tu email" value="">
+
+                        <label class="formulario__label" for="monto">Monto a solicitar</label>
+                        <input type="number" class="formulario__input" id="monto" placeholder="Indicar monto" value="">
+
+                        <label class="formulario__label" for="cuotas">Cuotas</label>
+                        <input type="number" class="formulario__input" id="cuotas" placeholder="¿En cuantas cuotas?" value="">
+                    </div>
+                    
+                    <div class="main__boton">
+                        <p><button class="boton" id="simular" type="submit">Simular Prestamo</button></p>
+                    </div>
+                </form>
+            </div>    
+
+            <div class="main__hero">
+                <img src="img/Prestamos.png" alt="">
+            </div>
+        </main>
+
+        <main class="tuPrestamo contenedor ">
+     
+            <div class="resultado__grid">
+
+                <div class="tuPrestamo__imagen">
+                    <img src="img/vecteezy_asian-man-is-feeling-happy-celebrate-on-white-background_3698405.jpg" alt="">
+                  </div>
+
+
+                <div class="resultados">
+                  <div class="resultados__titulo">  
+                  <h1>Tu Solicitud</h1>
+                  </div>  
+                  <ul class="tuPrestamo__lista">
+                      <li class="tuPrestamo__resultados">
+                        <div>
+                          <h3>Préstamo</h3>
+                          <small class="text-muted">Monto del préstamo</small>
+                        </div>
+                        <span class="text-muted" id="montoFinal">$0</span>
+                      </li>
+                      <li class="tuPrestamo__resultados">
+                        <div>
+                          <h3>Cuotas</h3>
+                          <small class="text-muted">Cantidad de cuotas</small>
+                        </div>
+                        <span class="text-muted" id="cuotaFinal">0</span>
+                      </li>
+                      <li class="tuPrestamo__resultados">
+                        <div class="text-success">
+                          <h3>Intereses</h3>
+                        </div>
+                        <span class="text-success" id="intereses">$0</span>
+                      </li>
+                      <li class="tuPrestamo__resultados">
+                        <span>Total a devolver</span>
+                        <strong id="totalADevolver">$0</strong>
+                      </li>
+                    </ul>
+      
+                    <div class="main__boton">
+                      <a href="Bienvenido.html"> <p><button class="boton" type="submit">Confirmar Prestamo</button></p></a>
+                    </div>
+
+                  </div> 
+                  
+                  
+            </div>  
+          </main>
+    
+        <footer class="footer" id="footer">
+            <p>Credicuotas pertenece a CREDICUOTAS CONSUMO S.A. CUIT 30-71091158-0, Av. Cordoba 629, piso 10, C.A.B.A. Argentina - Copyright Credicuotas 2021
+            El monto mínimo de financiación es de $10.000 y el monto máximo de $120.000. El período mínimo para la devolución de un préstamo es de 6 meses y el máximo 30 meses. El otorgamiento del préstamo está sujeto a evaluación crediticia. Tipo de Amortización Francés. Tasa Fija. Ejemplo de préstamo: Monto solicitado de $10.000 a 18 meses, TNA (sin IVA): 97,33%, TEA (sin IVA): 155,07%, CFTNA: 97,33% (sin IVA), CFTEA: 207,76% (IVA incluído), Cuota: $1.194,39 (IVA incluído). Total a pagar: $21.498,96 (IVA incluído).Tasa Fija al momento de solicitar el préstamo por parte del usuario. Este ejemplo no constituye obligación alguna de CREDICUOTAS CONSUMO S.A. de ofrecer el precio y el costo que se informa ya que la TNA, la TEA y el CFT varían según el perfil crediticio del solicitante del préstamo y el plazo de financiación elegido. Dependiendo del perfil de riesgo crediticio: CFTEA (IVA incluído) mínimo 187,73% ; CFTEA (IVA incluído) máximo 614,99%. TEA mínima 141,07% (sin IVA); TEA máxima 420,00% (sin IVA). La TNA de un préstamo varía dependiendo del perfil crediticio del solicitante, siendo la mínima 91,25% y la máxima 176,42%. La aprobación definitiva del préstamo quedará supeditada al cumplimiento de las condiciones exigidas por CREDICUOTAS CONSUMO S.A.
+            </p>
+            <h1>CFTEA(*): 207,76%</h1>
+            <p>(*)IVA incluído
+                CFTNA: 97,33% (sin IVA). TNA 97,33% (sin IVA). TEA 155,07% (sin IVA).</p>
+        </footer>
+    
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+:root {
+
+    --fuente_principal: 'Lexend', sans-serif;
+    
+    
+    --telefono: 480px;
+    --tablet: 768px;
+    --desktop: 1024px;
+    
+    
+    --primario: #e8505b;
+    --secundario: rgb(189, 30, 89); 
+    --negro: #000;
+    --blanco: #FFFFFF;
+    --gris: #686868;
+    --grisClaro: #e1e1e1;
+    
+    --separacion: 5rem;
+    
+    }
+    html {
+        font-size: 62.5%;
+        box-sizing: border-box;
+    }
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+      
+    body {
+        font-family: var(--fuente_principal);
+        font-size: 1.6rem;
+    }
+    
+    p {
+        color: var(--negro);
+        font-size: 2rem;
+    }
+
+    
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  * img {
+    width: 114%;
+    height: auto;
+  }
+  
+  body {
+    width: 100vw;
+    max-width: 100%;
+    max-height: 100%;
+    font-weight: var(--thin);
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+h1 {
+    margin-top: 1rem;
+    font-size: 3.4rem;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 90%;
+}
+
+/***************************navbar***************************/
+.barra{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.barra__logo{
+    width: 20rem;
+    height: 22rem;
+}
+
+.barra__link {
+        color: white;
+        text-decoration: none;
+        border-radius: 5rem;
+        box-shadow: 0px 3px 15px 0px black;
+        padding: 1.2rem 1.5rem;
+        background-color: rgb(236, 34, 101);
+        margin: 0 1rem;
+        font-weight: 700;
+}
+
+.barra__link:hover {
+    background-color: rgb(247, 175, 19);
+}
+/********************main*****************/
+.main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15rem;
+}
+
+.main__titulo {
+    line-height: 1.2;
+}
+
+.main__titulo h1 {
+    margin-bottom: 2rem;
+}
+
+
+.main__simulador {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 5rem;
+}
+
+.formulario__input {
+    border: none;
+}
+
+.formulario__label {
+    font-size: 1.4rem;
+    font-weight: 900;
+    margin-left: 1rem;
+}
+
+.formulario__input {
+    border: none;
+    width: 100%;
+    color: var(--gris);
+    outline: none;
+    border: 0;
+    background-color: #F0F0F0;
+    border-radius: 5rem;
+    box-shadow: 0px 6px 20px rgb(0 0 0 / 40%);
+    padding: 1rem;
+    
+}
+
+
+
+
+
+.main__hero {
+    width: 45rem;
+}
+
+.boton {
+    background-color: rgb(236, 34, 101);
+    border-radius: 5rem;
+    color: #FFFFFF;
+    border: none;
+    box-shadow: 0px 3px 15px 0px black;
+    padding: 1.2rem 1.5rem;
+    margin: 2rem 0;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: rgb(247, 175, 19);
+    color: black ;
+    font-weight: 700;
+}
+
+/*******************footer*******************/
+.footer{
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.footer h1{
+    margin: 2rem;
+    color: #686868;
+}
+
+/*****************************Seccion REsultado************************************/
+.resultado__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    gap: 2rem;
+    margin-top: 7rem;
+}
+
+.tuPrestamo__lista {
+    list-style:none;
+}
+
+.text-success  {
+    color: rgb(126, 255, 5);
+}
+
+.resultados__titulo {
+    color: rgb(35, 119, 245);
+    margin: 5rem;
+}
+
+.tuPrestamo__resultados {
+    margin-bottom: 2rem;
+}
+
+
+.tuPrestamo__imagen img{
+    height: 45rem;
+    margin-top: 2.5rem;
+}
+
+/*******************************Regsitro******************/
+.boton__registrate {
+    background-color: rgb(34, 138, 236);
+    border-radius: 5rem;
+    color: #FFFFFF;
+    border: none;
+    box-shadow: 0px 3px 15px 0px black;
+    padding: 1.2rem 3.5rem;
+    margin: 2rem 0;
+    font-size: 2.5rem;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.boton__registrate:hover {
+    background-color: rgb(247, 175, 19);
+    color: black ;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.main__registrate {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tuPrestamo__resultadosRegistrate{
+    margin-top: 2rem;
+}
+
+.resultados__tituloRegistrate{
+    color: rgb(35, 119, 245);
+    margin-bottom: 2rem;
+}
+
