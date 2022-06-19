@@ -14,7 +14,7 @@
     <header class="header">
         <div class="barra contenedor">
             <div class="barra__logo">
-                <img src="img/img logo.jpg" alt="">
+                <a href="index.html"><img src="img/img logo.jpg" alt=""></a>
             </div>
 
             <nav class="barra__navegacion">
@@ -52,7 +52,7 @@
                         <input type="number" class="formulario__input" id="cuotas" placeholder="¿En cuantas cuotas?" value="">
                     </div>
                     
-                    <div class="main__boton">
+                   <div class="main__boton">
                         <p><button class="boton" id="simular" type="submit">Simular Prestamo</button></p>
                     </div>
                 </form>
@@ -72,14 +72,14 @@
                   </div>
 
 
-                <div class="resultados">
+                <div class="resultados" id="monto-prestamo">
                   <div class="resultados__titulo">  
                   <h1>Tu Solicitud</h1>
                   </div>  
                   <ul class="tuPrestamo__lista">
                       <li class="tuPrestamo__resultados">
                         <div>
-                          <h3>Préstamo</h3>
+                          <h3 >Préstamo</h3>
                           <small class="text-muted">Monto del préstamo</small>
                         </div>
                         <span class="text-muted" id="montoFinal">$0</span>
@@ -112,6 +112,11 @@
                   
             </div>  
           </main>
+          <div class="pre-footer">
+            <p class="copyright">
+              Todos los derechos reservados &copy;<a href="https://github.com/gonzzzalo2090" target="_blank"> github.com/gonzzzalo2090</a></p>
+  
+          </div>
     
         <footer class="footer" id="footer">
             <p>Credicuotas pertenece a CREDICUOTAS CONSUMO S.A. CUIT 30-71091158-0, Av. Cordoba 629, piso 10, C.A.B.A. Argentina - Copyright Credicuotas 2021
@@ -122,6 +127,7 @@
                 CFTNA: 97,33% (sin IVA). TNA 97,33% (sin IVA). TEA 155,07% (sin IVA).</p>
         </footer>
     
+        <a href="#footer" class="btn-flotante">Bases y Condiciones</a>
     <script src="main.js"></script>
 </body>
 </html>

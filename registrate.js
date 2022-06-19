@@ -18,4 +18,34 @@ formularioRegistrate.addEventListener("submit",(e) => {
     registrarDni.innerText = dniCompleto.value ;
     registrarEmail.innerText = emailCompleto.value ;
     registrarTelefono.innerText = telefonoCompleto.value ;   
+
+    sincronizarStorage()
 })
+
+
+/********************************btn flotante */
+const btnFlotante = document.querySelector('.btn-flotante');
+const footer = document.querySelector('.footer');
+
+btnFlotante.addEventListener('click', mostrarOcultar);
+
+
+function mostrarOcultar() {
+    if(footer.classList.contains('activo')){
+        footer.classList.remove('activo');
+        btnFlotante.classList.remove('activo');
+        btnFlotante.textContent('Idioma y moneda');
+    }else {
+        footer.classList.add('activo');
+        btnFlotante.classList.add('activo');
+        btnFlotante.textContent('X Cerrar');
+    }
+}
+
+/*********************local storage ***************/
+function sincronizarStorage() {
+    localStorage.setItem('nombre',(registrarNombre.textContent));
+    localStorage.setItem('dni',(registrarDni.innerText));
+    localStorage.setItem('email',(registrarEmail.innerText));
+    localStorage.setItem('telefono',(registrarTelefono.innerText));
+}

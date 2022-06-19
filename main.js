@@ -18,7 +18,7 @@ formulario.addEventListener("submit",(e) => {
     e.preventDefault();
     
     obtenerCuotaDelPrestamo();
-    
+    sincronizarStorage()
 })
 
 const obtenerCuotaDelPrestamo = () => {
@@ -37,4 +37,31 @@ const pintarPrestamo = (total) => {
     intereses.textContent = total - monto.value ;
     totalADevolver.textContent = total ;
 }
+/***************************btn flotante *************/
+const btnFlotante = document.querySelector('.btn-flotante');
+const footer = document.querySelector('.footer');
+
+btnFlotante.addEventListener('click', mostrarOcultar);
+
+
+function mostrarOcultar() {
+    if(footer.classList.contains('activo')){
+        footer.classList.remove('activo');
+        this.classList.remove('activo');
+        this.textContent = 'Bases y Condiciones';
+    }else {
+        footer.classList.add('activo');
+        this.classList.add('activo');
+        this.textContent = 'Cerrar Bases y Condiciones';
+    }
+}
+
+/***********************local storage **************/
+function sincronizarStorage() {
+    localStorage.setItem('monto solicitado',(montoFinal.textContent));
+    localStorage.setItem('cuotas elegidas',(cuotaFinal.textContent));
+    localStorage.setItem('intereses',(intereses.textContent));
+    localStorage.setItem('total a devolver',(totalADevolver.textContent));
+}
+
 
