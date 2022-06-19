@@ -40,6 +40,20 @@ const pintarPrestamo = (total) => {
 /***************************btn flotante *************/
 const btnFlotante = document.querySelector('.btn-flotante');
 const footer = document.querySelector('.footer');
+const footer2 = document.querySelector('#footer2');
+
+footer2.addEventListener('click', mostrarOcultar2);
+function mostrarOcultar2() {
+    if(footer.classList.contains('activo')){
+        footer.classList.remove('activo');
+        this.classList.remove('activo');
+        this.textContent = 'Tasas e Intereses';
+    }else {
+        footer.classList.add('activo');
+        this.classList.add('activo');
+        this.textContent = 'Cerrar Tasas e intereses';
+    }
+}
 
 btnFlotante.addEventListener('click', mostrarOcultar);
 
