@@ -42,15 +42,17 @@ function mostrarOcultar2() {
 }
 
 btnFlotante.addEventListener('click', mostrarOcultar);
+
+
 function mostrarOcultar() {
     if(footer.classList.contains('activo')){
         footer.classList.remove('activo');
-        btnFlotante.classList.remove('activo');
-        btnFlotante.textContent('Idioma y moneda');
+        this.classList.remove('activo');
+        this.textContent = 'Bases y Condiciones';
     }else {
         footer.classList.add('activo');
-        btnFlotante.classList.add('activo');
-        btnFlotante.textContent('X Cerrar');
+        this.classList.add('activo');
+        this.textContent = 'Cerrar Bases y Condiciones';
     }
 }
 
