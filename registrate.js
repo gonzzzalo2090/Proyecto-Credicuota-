@@ -63,10 +63,10 @@ function sincronizarStorage() {
 }
 
 function recuperar(){
-    const nombreStorage = localStorage.getItem('nombre');
-    const dniStorage = localStorage.getItem('dni');
-    const emailStorage = localStorage.getItem('email');
-    const telefonoStorage = localStorage.getItem('telefono');
+    let nombreStorage = localStorage.getItem('nombre');
+    let dniStorage = localStorage.getItem('dni');
+    let emailStorage = localStorage.getItem('email');
+    let telefonoStorage = localStorage.getItem('telefono');
 }
 
-
+recuperar()
