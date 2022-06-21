@@ -17,37 +17,26 @@ let cuotaPrestamo;
 formulario.addEventListener("submit",(e) => {
     e.preventDefault();
     
-   const userMain = {
-        montoFinal: montoFinal.value,
-        cuotaFinal: cuotaFinal.value ,
-        intereses: totalADevolver - montoFinal.value ,
-        totalADevolver: totalADevolver,
-    }
-
-
-    obtenerCuotaDelPrestamo(userMain);
-    pintarPrestamo(userMain)
-    sincronizarStorage(userMain)
+    obtenerCuotaDelPrestamo();
+    sincronizarStorage()
 })
 
-const obtenerCuotaDelPrestamo = ({montoFinal, cuotaFinal}) => {
-    const cuotaPrestamo = tasa * montoFinal / (1 - (1+tasa) ** - cuotaFinal)
+const obtenerCuotaDelPrestamo = () => {
+    const cuotaPrestamo = tasa * monto.value / (1 - (1+tasa) ** - cuotas.value)
     obtenerTotal(cuotaPrestamo);
 } 
  
 const obtenerTotal = (cuotaPrestamo) => {
-    const totalADevolver = Math.ceil(cuotaPrestamo) * cuotas.value;
-    pintarPrestamo(totalADevolver)
+    const total = Math.ceil(cuotaPrestamo) * cuotas.value;
+    pintarPrestamo(total)
 }
 
-
-function pintarPrestamo ({montoFinal, cuotaFinal, intereses, totalADevolver}){
-    montoFinal.textContent = montoFinal; 
-    cuotaFinal.textContent = cuotaFinal;
-    intereses.textContent = totalADevolver - montoFinal;
-    totalADevolver.textContent = totalADevolver;
+const pintarPrestamo = (total) => {
+    montoFinal.textContent = monto.value; 
+    cuotaFinal.textContent = cuotas.value ;
+    intereses.textContent = total - monto.value ;
+    totalADevolver.textContent = total ;
 }
-
 /***********************local storage **************/
 function sincronizarStorage(userMain) {
     localStorage.setItem('userMain', JSON.stringify(userMain));

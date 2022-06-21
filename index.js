@@ -1,7 +1,6 @@
-import recuperarUsuario from "./registrate.js"
-// importar la función pintarPrestamo
+import recuperarUsuario from "./registrate.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     recuperarUsuario();
-    // Invocar la función pintar prestamo
+
 })
