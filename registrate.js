@@ -13,14 +13,24 @@ const registrarTelefono = document.getElementById("registrarTelefono");
 
 formularioRegistrate.addEventListener("submit",(e) => {
     e.preventDefault();
-    
-    registrarNombre.textContent = nombreCompleto.value; 
-    registrarDni.innerText = dniCompleto.value ;
-    registrarEmail.innerText = emailCompleto.value ;
-    registrarTelefono.innerText = telefonoCompleto.value ;   
 
-    sincronizarStorage()
-})
+    const user = {
+        nombre: nombreCompleto.value,
+        dni: dniCompleto.value,
+        email: emailCompleto.value,
+        telefono: telefonoCompleto.value,
+    }
+
+    pintardatosDeUsuario(user);
+    sincronizarStorage(user);
+});
+
+function pintardatosDeUsuario( {nombre, dni, email, telefono} ) {
+    registrarNombre.textContent = nombre;
+    registrarDni.innerText = dni;
+    registrarEmail.innerText = email;
+    registrarTelefono.innerText = telefono;
+}
 
 
 /*************************btn flotante - tasas e interes***************/
@@ -57,18 +67,11 @@ function mostrarOcultar() {
 }
 
 /*********************local storage ***************/
-function sincronizarStorage() {
-    localStorage.setItem('nombre',(registrarNombre.textContent));
-    localStorage.setItem('dni',(registrarDni.innerText));
-    localStorage.setItem('email',(registrarEmail.innerText));
-    localStorage.setItem('telefono',(registrarTelefono.innerText));
+function sincronizarStorage(user) {
+    localStorage.setItem('user', JSON.stringify(user));
 }
 
-function recuperar(){
-    let nombreStorage = localStorage.getItem('nombre');
-    let dniStorage = localStorage.getItem('dni');
-    let emailStorage = localStorage.getItem('email');
-    let telefonoStorage = localStorage.getItem('telefono');
+export default function recuperarUsuario(){
+    let usuarioStorage = JSON.parse(localStorage.getItem('user'));
+    pintardatosDeUsuario(usuarioStorage)
 }
-
-recuperar()

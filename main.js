@@ -17,26 +17,49 @@ let cuotaPrestamo;
 formulario.addEventListener("submit",(e) => {
     e.preventDefault();
     
-    obtenerCuotaDelPrestamo();
-    sincronizarStorage()
+   const userMain = {
+        montoFinal: monto.value,
+        cuotaFinal: cuotas.value ,
+        intereses: total - monto.value ,
+        totalADevolver: total,
+    }
+
+
+    obtenerCuotaDelPrestamo(userMain);
+    pintarPrestamo(userMain)
+    sincronizarStorage(userMain)
 })
 
-const obtenerCuotaDelPrestamo = () => {
-    const cuotaPrestamo = tasa * monto.value / (1 - (1+tasa) ** - cuotas.value)
+const obtenerCuotaDelPrestamo = ({montoFinal, cuotaFinal}) => {
+    const cuotaPrestamo = tasa * montoFinal / (1 - (1+tasa) ** - cuotaFinal)
     obtenerTotal(cuotaPrestamo);
 } 
  
 const obtenerTotal = (cuotaPrestamo) => {
-    const total = Math.ceil(cuotaPrestamo) * cuotas.value;
-    pintarPrestamo(total)
+    const totalADevolver = Math.ceil(cuotaPrestamo) * cuotas.value;
+    pintarPrestamo(totalADevolver)
 }
 
-const pintarPrestamo = (total) => {
-    montoFinal.textContent = monto.value; 
-    cuotaFinal.textContent = cuotas.value ;
-    intereses.textContent = total - monto.value ;
-    totalADevolver.textContent = total ;
+
+function pintarPrestamo ({montoFinal, cuotaFinal, intereses, totalADevolver}){
+    montoFinal.textContent = montoFinal; 
+    cuotaFinal.textContent = cuotaFinal;
+    intereses.textContent = totalADevolver - montoFinal;
+    totalADevolver.textContent = totalADevolver;
 }
+
+/***********************local storage **************/
+function sincronizarStorage(userMain) {
+    localStorage.setItem('userMain', JSON.stringify(userMain));
+}
+
+export default function recuperarPrestamo(){
+    let usuarioPrestamo = JSON.parse(localStorage.getItem('userMain'));
+    pintarPrestamo(usuarioPrestamo)
+}
+
+
+
 /***************************btn flotante *************/
 const btnFlotante = document.querySelector('.btn-flotante');
 const footer = document.querySelector('.footer');
@@ -68,14 +91,6 @@ function mostrarOcultar() {
         this.classList.add('activo');
         this.textContent = 'Cerrar Bases y Condiciones';
     }
-}
-
-/***********************local storage **************/
-function sincronizarStorage() {
-    localStorage.setItem('monto solicitado',(montoFinal.textContent));
-    localStorage.setItem('cuotas elegidas',(cuotaFinal.textContent));
-    localStorage.setItem('intereses',(intereses.textContent));
-    localStorage.setItem('total a devolver',(totalADevolver.textContent));
 }
 
 
