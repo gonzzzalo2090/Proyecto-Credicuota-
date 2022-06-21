@@ -6,24 +6,21 @@ const cuotas = document.getElementById("cuotas");
 const formulario = document.getElementById("form");
 
 const tasa = 0.01; //1%
-
+let userMain;
 const montoFinal = document.getElementById("montoFinal");
 const cuotaFinal = document.getElementById("cuotaFinal");
-const intereses = document.getElementById("intereses");
-const totalADevolver = document.getElementById("totalADevolver");
+const intereseshtml = document.getElementById("intereses");
+const totalADevolverhtml = document.getElementById("totalADevolver");
 
-let cuotaPrestamo;
 
 formulario.addEventListener("submit",(e) => {
     e.preventDefault();
     
-    const userMain = {
+    userMain = {
         monto: monto.value,
         cuotas: cuotas.value,
     }
 
-    
-    // obtenerCuotaDelPrestamo();
     pintarObjeto(userMain);
     obtenerCuotaDelPrestamo()
     sincronizarStorage(userMain);
@@ -42,13 +39,19 @@ formulario.addEventListener("submit",(e) => {
  const pintarPrestamo = (total) => {
      montoFinal.textContent = monto.value; 
      cuotaFinal.textContent = cuotas.value ;
-    intereses.textContent = total - monto.value ;
-     totalADevolver.textContent = total ;
+     intereseshtml.textContent = total - monto.value ;
+     totalADevolverhtml.textContent = total ;
+     userMain.intereses =  total - monto.value
+     userMain.totalADevolver =  total 
+
+     sincronizarStorage(userMain)
 }
 
-function pintarObjeto( {monto,cuotas} ) {
+function pintarObjeto( {monto,cuotas,intereses,totalADevolver } ) {
     montoFinal.textContent = monto; 
     cuotaFinal.textContent = cuotas;
+    intereseshtml.textContent = intereses
+    totalADevolverhtml.textContent = totalADevolver ;
 }
 
 /***********************local storage **************/
@@ -58,7 +61,9 @@ function sincronizarStorage(userMain) {
 
 export default function recuperarPrestamo(){
     let usuarioPrestamo = JSON.parse(localStorage.getItem('userMain'));
-    pintarObjeto(usuarioPrestamo)
+    if(usuarioPrestamo){
+       pintarObjeto(usuarioPrestamo) 
+    }
 }
 
 
@@ -95,5 +100,3 @@ function mostrarOcultar() {
         this.textContent = 'Cerrar Bases y Condiciones';
     }
 }
-
-
