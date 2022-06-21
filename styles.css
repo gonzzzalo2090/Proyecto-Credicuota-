@@ -294,3 +294,34 @@ h1 {
 .pre-footer p {
     color: #FFFFFF;
 }
+
+/******************pagina producto******************/
+.productos img {
+    width: 40rem;
+}
+
+.productos {
+display:flex;
+justify-content: space-around;
+text-align: center;
+}
+
+.submenu {
+    position: relative;
+}
+
+.submenu #carrito{
+    display: none;
+}
+.submenu:hover #carrito{
+    display: block;
+    position: absolute;
+    right:0;
+
+    top:100%;
+    z-index: 1;
+    background-color: white;
+    padding: 20px;
+    min-height: 400px;
+    min-width: 300px;
+}

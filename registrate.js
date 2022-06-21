@@ -61,3 +61,12 @@ function sincronizarStorage() {
     localStorage.setItem('email',(registrarEmail.innerText));
     localStorage.setItem('telefono',(registrarTelefono.innerText));
 }
+
+function recuperar(){
+    const nombreStorage = localStorage.getItem('nombre');
+    const dniStorage = localStorage.getItem('dni');
+    const emailStorage = localStorage.getItem('email');
+    const telefonoStorage = localStorage.getItem('telefono');
+}
+
+
