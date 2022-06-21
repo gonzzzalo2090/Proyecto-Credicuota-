@@ -18,10 +18,10 @@ formulario.addEventListener("submit",(e) => {
     e.preventDefault();
     
    const userMain = {
-        montoFinal: monto.value,
-        cuotaFinal: cuotas.value ,
-        intereses: total - monto.value ,
-        totalADevolver: total,
+        montoFinal: montoFinal.value,
+        cuotaFinal: cuotaFinal.value ,
+        intereses: totalADevolver - montoFinal.value ,
+        totalADevolver: totalADevolver,
     }
 
 
