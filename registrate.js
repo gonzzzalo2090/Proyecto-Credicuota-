@@ -32,13 +32,24 @@ function pintardatosDeUsuario( {nombre, dni, email, telefono} ) {
     registrarTelefono.innerText = telefono;
 }
 
+/*********************local storage ***************/
+function sincronizarStorage(user) {
+    localStorage.setItem('user', JSON.stringify(user));
+}
+
+export default function recuperarUsuario(){
+    let usuarioStorage = JSON.parse(localStorage.getItem('user'));
+    pintardatosDeUsuario(usuarioStorage)
+}
+
 
 /*************************btn flotante - tasas e interes***************/
 const btnFlotante = document.querySelector('.btn-flotante');
 const footer = document.querySelector('.footer');
-const footer2 = document.querySelector('#footerRegistrate');
+const footerRegistrate = document.querySelector('#footerRegistrate');
 
 footerRegistrate.addEventListener('click', mostrarOcultar2);
+
 function mostrarOcultar2() {
     if(footer.classList.contains('activo')){
         footer.classList.remove('activo');
@@ -51,31 +62,22 @@ function mostrarOcultar2() {
     }
 }
 
+
 btnFlotante.addEventListener('click', mostrarOcultar);
+
 function mostrarOcultar() {
     if(footer.classList.contains('activo')){
         footer.classList.remove('activo');
-        btnFlotante.classList.remove('activo');
-        btnFlotante.textContent('Idioma y moneda');
+        this.classList.remove('activo');
+        this.textContent = 'Bases y Condiciones';
     }else {
         footer.classList.add('activo');
-        btnFlotante.classList.add('activo');
-        btnFlotante.textContent('X Cerrar');
+        this.classList.add('activo');
+        this.textContent = 'Cerrar Bases y Condiciones';
     }
 }
 
-/*********************local storage ***************/
-function sincronizarStorage(user) {
-    localStorage.setItem('user', JSON.stringify(user));
-}
-
-export default function recuperarUsuario(){
-    let usuarioStorage = JSON.parse(localStorage.getItem('user'));
-    pintardatosDeUsuario(usuarioStorage)
-}
-
-
-/************************SWEET ALERT*********************/
+/************************TOASTIFY*********************/
 const registrarbtn = document.getElementById("registrar");
 
 registrarbtn.addEventListener("click", () => {
@@ -92,7 +94,7 @@ registrarbtn.addEventListener("click", () => {
  })
 
 
-
+/************************SWEET ALERT*********************/
 
 const btnRegistrate = document.getElementById("btnAlertRegistrate");
 

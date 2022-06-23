@@ -110,13 +110,13 @@ function mostrarOcultar() {
 
 
 /******************Sweet Alert ********************/
-const btnsimular = document.getElementById("simular");
+const btnSimular = document.getElementById("simular");
 
-btnsimular.addEventListener("click",() => {
+btnSimular.addEventListener("click",() => {
   
     swal({
       title: "Perfecto",
-      text: (indexNombre.textContent+" "+indexApellido.textContent +" Aceptas continuar con tu solicitud?"),
+      text: (indexNombre.value+" "+indexApellido.value +" ¿Aceptas continuar con tu solicitud?"),
       icon: "success",
       confirm: "OK",
       buttons: true,
@@ -131,12 +131,9 @@ btnsimular.addEventListener("click",() => {
 
 
 
+const btnConfirmar = document.getElementById("btnConfirmar");
 
-
-
-const btnIndex = document.getElementById("btnAlert");
-
-btnIndex.addEventListener("click",() => {
+btnConfirmar.addEventListener("click",() => {
   
   swal({
     title: "Genial",

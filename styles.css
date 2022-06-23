@@ -77,10 +77,31 @@ h1 {
     justify-content: space-between;
     align-items: center;
 }
+@media (max-width: 768px) { 
+    .barra {
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width: 768px) { 
+    .barra__navegacion {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 5rem;
+        text-align: center;
+    }
+}
+
 
 .barra__logo{
     width: 20rem;
     height: 22rem;
+}
+@media (max-width: 768px) { 
+    .barra__logo {
+        margin-right: 3rem;
+    }
 }
 
 .barra__link {
@@ -96,12 +117,21 @@ h1 {
 
 .barra__link:hover {
     background-color: rgb(247, 175, 19);
+    color: white;
 }
 /********************main*****************/
 .main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15rem;
+}
+
+@media (max-width: 768px) { 
+    .main{
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
 }
 
 .main__titulo {
@@ -151,6 +181,12 @@ h1 {
     width: 45rem;
 }
 
+@media (max-width: 768px) { 
+    .main__hero {
+        display: none;
+    }
+}
+
 .boton {
     background-color: rgb(236, 34, 101);
     border-radius: 5rem;
@@ -163,6 +199,12 @@ h1 {
     cursor: pointer;
 }
 
+@media (max-width: 768px) { 
+   .boton{
+    font-size: 1.8rem;
+   } 
+}
+
 .boton:hover {
     background-color: rgb(247, 175, 19);
     color: black ;
@@ -172,36 +214,66 @@ h1 {
 /*******************footer*******************/
 .footer{
     text-align: center;
-    position: fixed;
     bottom:-100%;
     transition: all 0.25s ease-in;
     width: 100%;
     background-color: rgb(236, 34, 101);
     padding: 1rem;
 }
+@media (min-width: 768px) { 
+    .footer{
+        position: fixed;
+    }  
+}
+
 .footer p {
     color: #FFFFFF;
 }
+@media (max-width: 768px) { 
+    .footer p {
+        font-size: 1rem;
+    }
+}
+
 .footer h1{
     margin: 2rem;
     color: white;
 }
+@media (max-width: 768px) { 
+    .footer h1 {
+        font-size: 1.5rem;
+    }
+}
 
-.footer.activo {
-    bottom: 0;
+
+@media (min-width: 768px) { 
+    .footer.activo {
+        bottom: 0;
+    } 
 }
 
 /*****************************Seccion REsultado************************************/
 .resultado__grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     text-align: center;
-    gap: 2rem;
-    margin-top: 7rem;
+    margin-top: 4rem;
+
 }
+
+@media (min-width: 768px) { 
+    .resultado__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
+        gap: 2rem;
+        margin-top: 7rem;
+    }
+}
+
 
 .tuPrestamo__lista {
     list-style:none;
+    margin-right: 2.6rem 
 }
 
 .text-success  {
@@ -221,6 +293,11 @@ h1 {
 .tuPrestamo__imagen img{
     height: 47rem;
     margin-top: 2.5rem;
+}
+@media (max-width: 768px) { 
+    .tuPrestamo__imagen img {
+        display:none;
+    }
 }
 
 /*******************************Regsitro******************/
@@ -259,69 +336,64 @@ h1 {
 .resultados__tituloRegistrate{
     color: rgb(35, 119, 245);
     margin-bottom: 2rem;
+    margin-left: 1.3rem;
 }
 
 /************btn flotante**********************/
-.btn-flotante {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    background-color: rgb(236, 34, 101);
-    text-decoration: none;
-    border-radius: 5rem;
-    color: #FFFFFF;
-    border: none;
-    box-shadow: 0px 3px 15px 0px black;
-    padding: .6rem .5rem;
-    margin:0;
-    font-size: 1.5rem;
-    cursor: pointer;
-    font-weight: 300;
+@media (min-width: 768px) { 
+    .btn-flotante {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        background-color: rgb(236, 34, 101);
+        text-decoration: none;
+        border-radius: 5rem;
+        color: #FFFFFF;
+        border: none;
+        box-shadow: 0px 3px 15px 0px black;
+        padding: .6rem .5rem;
+        margin:0;
+        font-size: 1.5rem;
+        cursor: pointer;
+        font-weight: 300;
+    } 
 }
-.btn-flotante.activo {
-    background-color: rgb(247, 175, 19);
-    color: rgb(255, 255, 255);
-    font-weight: 700;
+.btn-flotante:hover{
+    color: white;
+}
 
+@media (min-width: 768px) { 
+    .btn-flotante.activo {
+        background-color: rgb(247, 175, 19);
+        color: rgb(255, 255, 255);
+        font-weight: 700;
+    }
 }
 /**************************pre-footer****************/
 .pre-footer {
-    padding: 1.5rem;
+    padding-bottom: .2rem;
+    padding-top: 1.2rem;
     background-color: rgb(35, 119, 245);
     text-align: center;
+    font-weight: 700;
+}
+@media (max-width: 768px) { 
+    .pre-footer{
+        font-size: 1.5rem;
+        padding: .5rem;
+    }
 }
 
 .pre-footer p {
-    color: #FFFFFF;
+    color: white;
+}
+.pre-footer a{
+    color: rgb(165, 237, 247);
 }
 
-/******************pagina producto******************/
-.productos img {
-    width: 40rem;
+@media (max-width: 768px) { 
+    .pre-footer p {
+        font-size: 1.5rem;
+    }
 }
 
-.productos {
-display:flex;
-justify-content: space-around;
-text-align: center;
-}
-
-.submenu {
-    position: relative;
-}
-
-.submenu #carrito{
-    display: none;
-}
-.submenu:hover #carrito{
-    display: block;
-    position: absolute;
-    right:0;
-
-    top:100%;
-    z-index: 1;
-    background-color: white;
-    padding: 20px;
-    min-height: 400px;
-    min-width: 300px;
-}
