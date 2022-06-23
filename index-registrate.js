@@ -1,4 +1,4 @@
-import recuperarUsuario from "./registrate.js";
+import recuperarUsuario from "/registrate.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     recuperarUsuario();
