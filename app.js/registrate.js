@@ -73,3 +73,38 @@ export default function recuperarUsuario(){
     let usuarioStorage = JSON.parse(localStorage.getItem('user'));
     pintardatosDeUsuario(usuarioStorage)
 }
+
+
+/************************SWEET ALERT*********************/
+const registrarbtn = document.getElementById("registrar");
+
+registrarbtn.addEventListener("click", () => {
+     Toastify({
+         text: "Datos guardados correctamente ✅",
+         duration: 3000,
+         gravity: "top",
+         position: "right",
+         style: {
+             borderRadius: "5rem",   
+             background: "linear-gradient(to right, rgb(34, 138, 236), #8f8f8f)"
+         }
+     }).showToast();
+ })
+
+
+
+
+const btnRegistrate = document.getElementById("btnAlertRegistrate");
+
+btnRegistrate.addEventListener("click",() => {
+  
+  swal({
+    title: "Genial",
+    text: (registrarNombre.textContent +" Tu registro fue exitoso!"),
+    icon: "success",
+    confirm: "OK",
+    timer: 3000,
+  }).then(function() {
+    window.location = "index.html";
+});
+});

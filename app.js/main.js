@@ -1,5 +1,6 @@
 'use strict'
-
+const indexNombre = document.getElementById("indexNombre");
+const indexApellido = document.getElementById("indexApellido");
 const monto = document.getElementById("monto");
 const cuotas = document.getElementById("cuotas");
 
@@ -19,6 +20,8 @@ formulario.addEventListener("submit",(e) => {
     userMain = {
         monto: monto.value,
         cuotas: cuotas.value,
+        Nombre:indexNombre.value,
+        Apellido: indexApellido.value,
     }
 
     pintarObjeto(userMain);
@@ -43,15 +46,19 @@ formulario.addEventListener("submit",(e) => {
      totalADevolverhtml.textContent = total ;
      userMain.intereses =  total - monto.value
      userMain.totalADevolver =  total 
+     indexNombre.textContent = indexNombre.value
+     indexApellido.textContent = indexApellido.value
 
      sincronizarStorage(userMain)
 }
 
-function pintarObjeto( {monto,cuotas,intereses,totalADevolver } ) {
+function pintarObjeto( {monto,cuotas,intereses,totalADevolver,Apellido,Nombre } ) {
     montoFinal.textContent = monto; 
     cuotaFinal.textContent = cuotas;
-    intereseshtml.textContent = intereses
+    intereseshtml.textContent = intereses;
     totalADevolverhtml.textContent = totalADevolver ;
+    indexNombre.textContent = Nombre;
+    indexApellido.textContent = Apellido;
 }
 
 /***********************local storage **************/
@@ -100,3 +107,44 @@ function mostrarOcultar() {
         this.textContent = 'Cerrar Bases y Condiciones';
     }
 }
+
+
+/******************Sweet Alert ********************/
+const btnsimular = document.getElementById("simular");
+
+btnsimular.addEventListener("click",() => {
+  
+    swal({
+      title: "Perfecto",
+      text: (indexNombre.textContent+" "+indexApellido.textContent +" Aceptas continuar con tu solicitud?"),
+      icon: "success",
+      confirm: "OK",
+      buttons: true,
+      dangerMode: true,
+    }).then((result) => {
+        if(result){
+            window.location = "#simulado";
+        }    
+    })
+  });
+
+
+
+
+
+
+
+const btnIndex = document.getElementById("btnAlert");
+
+btnIndex.addEventListener("click",() => {
+  
+  swal({
+    title: "Genial",
+    text: (indexNombre.textContent+" "+indexApellido.textContent +" Tu credito fue aprobado!"),
+    icon: "success",
+    confirm: "OK",
+    timer: 3000,
+  }).then(function() {
+    window.location = "Bienvenido.html";
+});
+});
