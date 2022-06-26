@@ -120,7 +120,7 @@ btnSimular.addEventListener("click",() => {
       icon: "success",
       confirm: "OK",
       buttons: true,
-      dangerMode: true,
+      dangerMode: false,
     }).then((result) => {
         if(result){
             window.location = "#simulado";

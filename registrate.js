@@ -90,11 +90,7 @@ registrarbtn.addEventListener("click", () => {
              borderRadius: "5rem",   
              background: "linear-gradient(to right, rgb(34, 138, 236), #8f8f8f)"
          }
-     }).showToast((result) => {
-        if(result){
-            window.location = "#tus-datos";
-        }    
-    })
+     }).showToast()
  })
 
 

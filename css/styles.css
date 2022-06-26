@@ -193,7 +193,7 @@ h1 {
     color: #FFFFFF;
     border: none;
     box-shadow: 0px 3px 15px 0px black;
-    padding: 1.2rem 1.5rem;
+    padding: 0 1.5rem;
     margin: 2rem 0;
     font-size: 2.5rem;
     cursor: pointer;
@@ -403,3 +403,63 @@ h1 {
     }
 }
 
+/***************************productos****************************/
+.borrar-producto {
+    background-color: red;
+    border-radius: 50%;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+}
+
+.submenu {
+    position: relative;
+}
+
+.submenu #carrito{
+    display: none;
+}
+.submenu:hover #carrito{
+    display: block;
+    position: absolute;
+    right:0;
+
+    top:100%;
+    z-index: 1;
+    background-color: white;
+    padding: 20px;
+    min-height: 400px;
+    min-width: 300px;
+}
+
+
+
+.info-card {
+    margin-bottom: 10rem;
+}
+
+.confirmar {
+    background-color: rgb(50, 252, 0);
+    color: #FFFFFF;
+}
+
+.eliminar {
+    background-color: rgba(255, 0, 0, 0.808);
+    color: #FFFFFF;
+}
+
+#agregarCarrito1{
+    line-height: 38px;
+    font-size: 1.2rem;
+    border-radius: 5rem;
+}
+#agregarCarrito2{
+    line-height: 38px;
+    font-size: 1.2rem;
+    border-radius: 5rem;
+}
