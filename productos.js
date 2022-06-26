@@ -15,7 +15,8 @@ function cargarEventListeners () {
     carrito.addEventListener('click', eliminarProducto);
     vaciarCarritoBtn.addEventListener('click',() => {
         articulosCarrito = [];
-        
+        localStorage.setItem('carrito', JSON.stringify(articulosCarrito))
+
         swal({
             title: "Perfecto",
             text: (" ¿Quieres eliminar todo tu carrito?"),
@@ -26,6 +27,7 @@ function cargarEventListeners () {
           }).then((result) => {
             if(result){
                 limpiarHtml();
+                localStorage.setItem('carrito', JSON.stringify(articulosCarrito))
             }    
         })
     });
@@ -86,6 +88,7 @@ function leerDatosProducto(tarjeta) {
 
     carritoHtml()
     localStorage.setItem('carrito', JSON.stringify(articulosCarrito))
+    
 }
 
 
