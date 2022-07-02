@@ -1,3 +1,15 @@
+/*****************Validaciones*************************/
+let error= '';
+let enviar= false;
+const parrafo = document.getElementById('errores');
+let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+
+const validatePhone = (phone) => {
+    let re = /^\d{10}$/;
+    return re.test(phone);
+  };
+  
+
 /*********************REgistrate **********************/
 const nombreCompleto = document.getElementById("nombreApellido");
 const dniCompleto = document.getElementById("dni");
@@ -12,7 +24,7 @@ const registrarEmail = document.getElementById("registrarEmail");
 const registrarTelefono = document.getElementById("registrarTelefono");
 
 formularioRegistrate.addEventListener("submit",(e) => {
-    e.preventDefault();
+    e.preventDefault(e);
 
     const user = {
         nombre: nombreCompleto.value,
@@ -20,6 +32,9 @@ formularioRegistrate.addEventListener("submit",(e) => {
         email: emailCompleto.value,
         telefono: telefonoCompleto.value,
     }
+
+
+    validaciones()
 
     pintardatosDeUsuario(user);
     sincronizarStorage(user);
@@ -32,6 +47,43 @@ function pintardatosDeUsuario( {nombre, dni, email, telefono} ) {
     registrarTelefono.innerText = telefono;
 }
 
+
+
+
+
+
+const validaciones = () => {
+/*validaciones de form*/
+if (nombreCompleto.value.length <= 0) {
+  error += `<b>*La casilla Nombre y Apellido esta incompleta</b> <br>`;
+  enviar = true;
+}  
+
+if (dniCompleto.value.length <= 6) {
+  error += `<b>*El numero de dni es invalido</b> <br>`;
+  enviar = true;
+}  
+
+if (!regexEmail.test(emailCompleto.value)) {
+  error += `*<b>El email no es valido</b> <br>`;
+  enviar = true;
+}
+
+if (!validatePhone(telefonoCompleto.value)) {
+  error += `<b>*El numero de telefono es invalido</b> <br>`;
+  enviar = true;
+}
+
+if (enviar) {
+  parrafo.classList.add('errores');
+  parrafo.innerHTML = error;
+
+} else {
+  parrafo.classList.add('ok');
+  parrafo.innerHTML = 'Enviado';
+}
+
+}
 /*********************local storage ***************/
 function sincronizarStorage(user) {
     localStorage.setItem('user', JSON.stringify(user));

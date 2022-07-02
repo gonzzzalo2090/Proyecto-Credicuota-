@@ -21,10 +21,11 @@
 
             <nav class="barra__navegacion">
                 <a class="barra__link" href="#simulador">Simular Prestamo</a>
-                <a class="barra__link" href="#" id="footer2">Tasas e Intereses</a>
                 <a class="barra__link" href="registrate.html">Registrate</a>
                 <a class="barra__link" href="productos.html">Productos Financieros</a>
-            </nav>
+                <a class="barra__link" href="conversor-de-moneda.html">Conversor de moneda</a>
+
+              </nav>
         </div>
     </header>
 
@@ -43,10 +44,10 @@
                         <input type="text" class="formulario__input" id="indexApellido" placeholder="Introduce tu apellido" value="">
 
                         <label class="formulario__label" for="">dni</label>
-                        <input type="number" class="formulario__input" id="" placeholder="Indicar dni" value="">
+                        <input type="number" class="formulario__input" id="indexDni" placeholder="Indicar dni" value="">
                         
                         <label class="formulario__label" for="">Correo electronico</label>
-                        <input type="email" class="formulario__input" id="" placeholder="Indica tu email" value="">
+                        <input type="email" class="formulario__input" id="indexEmail" placeholder="Indica tu email" value="">
 
                         <label class="formulario__label" for="monto">Monto a solicitar</label>
                         <input type="number" class="formulario__input" id="monto" placeholder="Indicar monto" value="">
@@ -58,6 +59,8 @@
                    <div class="main__boton">
                         <p><button class="boton" id="simular" type="submit">Simular Prestamo</button></p>
                     </div>
+                    <p class="errores" id="errores"></p>
+
                 </form>
             </div>    
 

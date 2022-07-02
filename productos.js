@@ -14,8 +14,8 @@ function cargarEventListeners () {
     listaTarjetas.addEventListener('click', agregarTarjeta);
     carrito.addEventListener('click', eliminarProducto);
     vaciarCarritoBtn.addEventListener('click',() => {
-        articulosCarrito = [];
-        localStorage.setItem('carrito', JSON.stringify(articulosCarrito))
+    articulosCarrito = [];
+    localStorage.setItem('carrito', JSON.stringify(articulosCarrito))
 
         swal({
             title: "Perfecto",
@@ -37,7 +37,7 @@ function cargarEventListeners () {
 
 
 
-//funciones
+
 function agregarTarjeta(e) {
     e.preventDefault();
     if(e.target.classList.contains('agregar-carrito')){
@@ -178,7 +178,7 @@ const agregarCarrito1 = document.getElementById("agregarCarrito1");
 agregarCarrito1.addEventListener("click", () => {
     Toastify({
         text: "Añadido al carrito correctamente 🛒",
-        duration: 3000,
+        duration: 1500,
         gravity: "top",
         position: "right",
         style: {
@@ -193,7 +193,7 @@ const agregarCarrito2 = document.getElementById("agregarCarrito2");
 agregarCarrito2.addEventListener("click", () => {
     Toastify({
         text: "Añadido al carrito correctamente 🛒",
-        duration: 3000,
+        duration: 1500,
         gravity: "top",
         position: "right",
         style: {

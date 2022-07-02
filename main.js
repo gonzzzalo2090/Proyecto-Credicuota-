@@ -1,13 +1,21 @@
 'use strict'
 const indexNombre = document.getElementById("indexNombre");
 const indexApellido = document.getElementById("indexApellido");
+const indexDni = document.getElementById("indexDni");
+const indexEmail = document.getElementById("indexEmail");
 const monto = document.getElementById("monto");
 const cuotas = document.getElementById("cuotas");
-
 const formulario = document.getElementById("form");
+/*validaciones*/
+let error= '';
+let enviar= false;
+const parrafo = document.getElementById('errores');
+let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+
 
 const tasa = 0.01; //1%
 let userMain;
+
 const montoFinal = document.getElementById("montoFinal");
 const cuotaFinal = document.getElementById("cuotaFinal");
 const intereseshtml = document.getElementById("intereses");
@@ -24,7 +32,12 @@ formulario.addEventListener("submit",(e) => {
         Apellido: indexApellido.value,
     }
 
+    
+
+
+
     pintarObjeto(userMain);
+    validaciones()
     obtenerCuotaDelPrestamo()
     sincronizarStorage(userMain);
 })
@@ -73,7 +86,41 @@ export default function recuperarPrestamo(){
     }
 }
 
+/*****************************validaciones de form*******************************/
+const validaciones = ()=>{
+  
+    if (indexNombre.value.length <= 0) {
+        error += `<b>*La casilla Nombre esta incompleta</b> <br>`;
+        enviar = true;     
+      }  
+      if (indexApellido.value.length <= 0) {
+        error += `<b>*La casilla Apellido esta incompleta</b> <br>`;
+        enviar = true;
+      }  
+    
+      if (indexDni.value.length <= 6) {
+        error += `<b>*El numero de dni es invalido</b> <br>`;
+        enviar = true;
+      }  
+      
+      if (!regexEmail.test(indexEmail.value)) {
+        error += `*<b>El email no es valido</b> <br>`;
+        enviar = true;
+      }
+    
+      if (enviar) {
+        parrafo.classList.add('errores');
+        parrafo.innerHTML = error;
+        setTimeout( () =>{
+          parrafo.remove()
+        },5000 );
+      } else {
+        parrafo.classList.add('ok');
+        parrafo.innerHTML = 'Enviado';
+      }
 
+     
+}
 
 /***************************btn flotante *************/
 const btnFlotante = document.querySelector('.btn-flotante');
