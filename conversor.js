@@ -15,7 +15,6 @@ const calculate = ()=>{
         const laTaza = data.rates[segundaMoneda];
         cantidadDos.value = (cantidadUno.value * laTaza).toFixed(2);
     });
-
 }
 
 //eventos

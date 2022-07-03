@@ -51,39 +51,36 @@ function pintardatosDeUsuario( {nombre, dni, email, telefono} ) {
 
 
 
-
 const validaciones = () => {
-/*validaciones de form*/
-if (nombreCompleto.value.length <= 0) {
-  error += `<b>*La casilla Nombre y Apellido esta incompleta</b> <br>`;
-  enviar = true;
-}  
+  /*validaciones de form*/
+  if (nombreCompleto.value.length <= 0) {
+    error += `<b>*La casilla Nombre y Apellido esta incompleta</b> <br>`;
+    enviar = true;
+   
+  }  
+  
+  if (dniCompleto.value.length <= 6) {
+    error += `<b>*El numero de dni es invalido</b> <br>`;
+    enviar = true;
+  }  
+  
+  if (!regexEmail.test(emailCompleto.value)) {
+    error += `*<b>El email no es valido</b> <br>`;
+    enviar = true;
+  }
+  
+  if (!validatePhone(telefonoCompleto.value)) {
+    error += `<b>*El numero de telefono es invalido</b> <br>`;
+    enviar = true;
+  }
+  
+  if (enviar) {
+    parrafo.classList.add('errores');
+    parrafo.innerHTML = error;
+  }
+  }
+  
 
-if (dniCompleto.value.length <= 6) {
-  error += `<b>*El numero de dni es invalido</b> <br>`;
-  enviar = true;
-}  
-
-if (!regexEmail.test(emailCompleto.value)) {
-  error += `*<b>El email no es valido</b> <br>`;
-  enviar = true;
-}
-
-if (!validatePhone(telefonoCompleto.value)) {
-  error += `<b>*El numero de telefono es invalido</b> <br>`;
-  enviar = true;
-}
-
-if (enviar) {
-  parrafo.classList.add('errores');
-  parrafo.innerHTML = error;
-
-} else {
-  parrafo.classList.add('ok');
-  parrafo.innerHTML = 'Enviado';
-}
-
-}
 /*********************local storage ***************/
 function sincronizarStorage(user) {
     localStorage.setItem('user', JSON.stringify(user));
@@ -92,41 +89,6 @@ function sincronizarStorage(user) {
 export default function recuperarUsuario(){
     let usuarioStorage = JSON.parse(localStorage.getItem('user'));
     pintardatosDeUsuario(usuarioStorage)
-}
-
-
-/*************************btn flotante - tasas e interes***************/
-const btnFlotante = document.querySelector('.btn-flotante');
-const footer = document.querySelector('.footer');
-const footerRegistrate = document.querySelector('#footerRegistrate');
-
-footerRegistrate.addEventListener('click', mostrarOcultar2);
-
-function mostrarOcultar2() {
-    if(footer.classList.contains('activo')){
-        footer.classList.remove('activo');
-        this.classList.remove('activo');
-        this.textContent = 'Tasas e Intereses';
-    }else {
-        footer.classList.add('activo');
-        this.classList.add('activo');
-        this.textContent = 'Cerrar Tasas e intereses';
-    }
-}
-
-
-btnFlotante.addEventListener('click', mostrarOcultar);
-
-function mostrarOcultar() {
-    if(footer.classList.contains('activo')){
-        footer.classList.remove('activo');
-        this.classList.remove('activo');
-        this.textContent = 'Bases y Condiciones';
-    }else {
-        footer.classList.add('activo');
-        this.classList.add('activo');
-        this.textContent = 'Cerrar Bases y Condiciones';
-    }
 }
 
 /************************TOASTIFY*********************/
@@ -162,3 +124,37 @@ btnRegistrate.addEventListener("click",() => {
     window.location = "index.html";
 });
 });
+/*************************btn flotante - tasas e interes***************/
+const btnFlotante = document.querySelector('.btn-flotante');
+const footer = document.querySelector('.footer');
+const footerRegistrate = document.querySelector('#footerRegistrate');
+
+footerRegistrate.addEventListener('click', mostrarOcultar2);
+
+function mostrarOcultar2() {
+    if(footer.classList.contains('activo')){
+        footer.classList.remove('activo');
+        this.classList.remove('activo');
+        this.textContent = 'Tasas e Intereses';
+    }else {
+        footer.classList.add('activo');
+        this.classList.add('activo');
+        this.textContent = 'Cerrar Tasas e intereses';
+    }
+}
+
+
+btnFlotante.addEventListener('click', mostrarOcultar);
+
+function mostrarOcultar() {
+    if(footer.classList.contains('activo')){
+        footer.classList.remove('activo');
+        this.classList.remove('activo');
+        this.textContent = 'Bases y Condiciones';
+    }else {
+        footer.classList.add('activo');
+        this.classList.add('activo');
+        this.textContent = 'Cerrar Bases y Condiciones';
+    }
+}
+

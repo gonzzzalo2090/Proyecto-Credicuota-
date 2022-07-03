@@ -312,7 +312,7 @@ h1 {
     font-size: 2.5rem;
     cursor: pointer;
     font-weight: 700;
-    margin-bottom: 10rem;
+    margin-bottom: 2rem;
 }
 
 .boton__registrate:hover {
@@ -515,4 +515,8 @@ ul {
 
   .select:focus, .cotizador-input:focus, .taza-de-cambio button:focus{
     outline: 0;
+  }
+/**********resolucion problemas*********/
+  .barra__link_intereses{
+    display: none;
   }
