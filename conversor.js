@@ -14,6 +14,8 @@ const calculate = ()=>{
     .then(data => {
         const laTaza = data.rates[segundaMoneda];
         cantidadDos.value = (cantidadUno.value * laTaza).toFixed(2);
+        console.log(data)
+        
     });
 }
 
@@ -32,3 +34,4 @@ taza.addEventListener('click', () => {
 
 
 calculate()
+
