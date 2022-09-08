@@ -1,4 +1,3 @@
-'use strict'
 const indexNombre = document.getElementById("indexNombre");
 const indexApellido = document.getElementById("indexApellido");
 const monto = document.getElementById("monto");
@@ -26,8 +25,9 @@ formulario.addEventListener("submit",(e) => {
     }
 
 
+    
+    obtenerCuotaDelPrestamo();
     pintarObjeto(userMain);
-    obtenerCuotaDelPrestamo()
     sincronizarStorage(userMain);
 })
 
@@ -55,13 +55,14 @@ formulario.addEventListener("submit",(e) => {
 }
 
 function pintarObjeto( {monto,cuotas,intereses,totalADevolver,Apellido,Nombre } ) {
-    montoFinal.textContent = monto; 
+    montoFinal.textContent = `$${monto}`; 
     cuotaFinal.textContent = cuotas;
-    intereseshtml.textContent = intereses;
-    totalADevolverhtml.textContent = totalADevolver ;
+    intereseshtml.textContent = `$${intereses}`;
+    totalADevolverhtml.textContent = `: $${totalADevolver}` ;
     indexNombre.textContent = Nombre;
     indexApellido.textContent = Apellido;
 }
+
 
 /***********************local storage **************/
 function sincronizarStorage(userMain) {
@@ -74,6 +75,8 @@ export default function recuperarPrestamo(){
        pintarObjeto(usuarioPrestamo) 
     }
 }
+
+
 /*************************btn flotante - tasas e interes***************/
 const btnFlotante = document.querySelector('.btn-flotante');
 const footer = document.querySelector('.footer');
@@ -111,8 +114,6 @@ function mostrarOcultar() {
 
 
 /******************Sweet Alert ********************/
-
-
 const btnSimular = document.getElementById("simular");
 
 btnSimular.addEventListener("click",() => {

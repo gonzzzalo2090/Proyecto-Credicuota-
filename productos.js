@@ -204,12 +204,7 @@ agregarCarrito2.addEventListener("click", () => {
 })
 
 
-  
-    
-
 /************************SWEET ALERT*********************/
-
-
 confirmarSolicitud.addEventListener("click",() => {
   
   swal({
