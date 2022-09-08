@@ -19,7 +19,7 @@ const calculate = ()=>{
     });
 }
 
-//eventos
+///eventos
 monedaUno.addEventListener('change', calculate);
 cantidadUno.addEventListener('input', calculate);
 monedaDos.addEventListener('change', calculate);

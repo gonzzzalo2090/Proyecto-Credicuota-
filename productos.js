@@ -58,8 +58,6 @@ function eliminarProducto(e) {
 }
 
 
-
-
 //OBJETO
 function leerDatosProducto(tarjeta) {
     const infotarjeta = {
@@ -100,7 +98,7 @@ function limpiarHtml() {
 
 
 
-//Mostrar carrito en el html
+///Mostrar carrito en el HTML
 function carritoHtml() {
     limpiarHtml()
 

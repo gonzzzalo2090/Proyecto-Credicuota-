@@ -64,7 +64,7 @@ function pintarObjeto( {monto,cuotas,intereses,totalADevolver,Apellido,Nombre } 
 }
 
 
-/***********************local storage **************/
+/***********************local storage ***************/
 function sincronizarStorage(userMain) {
     localStorage.setItem('userMain', JSON.stringify(userMain));
 }

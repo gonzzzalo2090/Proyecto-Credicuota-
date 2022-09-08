@@ -25,6 +25,8 @@ formularioRegistrate.addEventListener("submit",(e) => {
     sincronizarStorage(user);
 });
 
+
+//PINTAR DATOS USUARIO
 function pintardatosDeUsuario( {nombre, dni, email, telefono} ) {
     registrarNombre.textContent = nombre;
     registrarDni.innerText = dni;
@@ -33,7 +35,7 @@ function pintardatosDeUsuario( {nombre, dni, email, telefono} ) {
 }
   
 
-/*********************local storage ***************/
+/*********************local storage *****************/
 function sincronizarStorage(user) {
     localStorage.setItem('user', JSON.stringify(user));
 }
